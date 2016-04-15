@@ -31,7 +31,7 @@
 
 		<!-- Cria as tabelas do banco de dados -->
 		<property name="hbm2ddl.auto">create</property>
-
+		
 	</session-factory>
 
 </hibernate-configuration>
