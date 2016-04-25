@@ -5,9 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+@SuppressWarnings("serial")
 @Entity
-public class Usuario {
-
+public class Usuario extends GenericDomain {
 	@Column(length = 32, nullable = false)
 	private String senha;
 	
@@ -37,7 +37,7 @@ public class Usuario {
 		this.tipo = tipo;
 	}
 
-	public Boolean isAtivo() {
+	public Boolean getAtivo() {
 		return ativo;
 	}
 
@@ -52,6 +52,4 @@ public class Usuario {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-	
-	
 }

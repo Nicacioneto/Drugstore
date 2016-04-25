@@ -41,6 +41,8 @@
 		<mapping class="br.pro.delfino.drogaria.domain.Pessoa" />
 		<mapping class="br.pro.delfino.drogaria.domain.Produto" />
 		<mapping class="br.pro.delfino.drogaria.domain.Usuario" />
+		<mapping class="br.pro.delfino.drogaria.domain.Venda" />
+		
 		
 		
 		
