@@ -10,21 +10,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@SuppressWarnings("serial")
 @Entity
 public class Venda extends GenericDomain {
-	
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date horario;
-
+	
 	@Column(nullable = false, precision = 7, scale = 2)
-	private BigDecimal valorTotal;
-
+	private BigDecimal precoTotal;
+	
 	@ManyToOne
 	private Cliente cliente;
-
-	@JoinColumn(nullable = false)
+	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Funcionario funcionario;
 
 	public Date getHorario() {
@@ -35,12 +35,12 @@ public class Venda extends GenericDomain {
 		this.horario = horario;
 	}
 
-	public BigDecimal getValorTotal() {
-		return valorTotal;
+	public BigDecimal getPrecoTotal() {
+		return precoTotal;
 	}
 
-	public void setValorTotal(BigDecimal valorTotal) {
-		this.valorTotal = valorTotal;
+	public void setPrecoTotal(BigDecimal precoTotal) {
+		this.precoTotal = precoTotal;
 	}
 
 	public Cliente getCliente() {
