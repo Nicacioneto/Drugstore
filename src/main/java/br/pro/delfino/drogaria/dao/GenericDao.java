@@ -6,6 +6,13 @@ import org.hibernate.Transaction;
 import br.pro.delfino.drogaria.util.HibernateUtil;
 
 public class GenericDao<Entidade> {
+	private Class<Entidade> classe;
+	@SuppressWarnings("unchecked");
+	public GenericDao() {
+		this.classe = (Class<Entidade>) ((ParameterizedType) getClass().getGenericSuperclass())
+				.getActualTypeArguments()[0];
+	}
+
 	public void salvar(Entidade entidade) {
 		Session sessao = HibernateUtil.getFabricaDeSessoes().openSession();
 		Transaction transacao = null;
