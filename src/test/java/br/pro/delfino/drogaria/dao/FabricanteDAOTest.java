@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import br.pro.delfino.drogaria.domain.Fabricante;
 
-public class FabricanteDaoTest {
+public class FabricanteDAOTest {
 
 	@Test
 	public void Salvar() {
 		Fabricante fabricante =new Fabricante();
 		fabricante.setDescricao("Fabricante e comerciante de medicamentos LTDA");
-		FabricanteDao fabricanteDao = new FabricanteDao();
+		FabricanteDAO fabricanteDao = new FabricanteDAO();
 		fabricanteDao.salvar(fabricante);
 		
 	}
