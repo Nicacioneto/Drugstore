@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import br.pro.delfino.drogaria.domain.Estado;
 
-public class EstadaoDAOTest {
+public class EstadoDAOTest {
 	@Test
 	@Ignore
 	public void salvar() {
@@ -35,29 +35,53 @@ public class EstadaoDAOTest {
 	@Test
 	@Ignore
 	public void buscar() {
-		long codigo = 1L;
+		Long codigo = 3L;
+
 		EstadoDAO estadoDAO = new EstadoDAO();
 		Estado estado = estadoDAO.buscar(codigo);
+
 		if (estado == null) {
 			System.out.println("Nenhum registro encontrado");
 		} else {
+			System.out.println("Registro encontrado:");
 			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
 		}
 	}
 
 	@Test
+	@Ignore
 	public void excluir() {
-		long codigo = 1L;
+		Long codigo = 9L;
 		EstadoDAO estadoDAO = new EstadoDAO();
 		Estado estado = estadoDAO.buscar(codigo);
+
 		if (estado == null) {
 			System.out.println("Nenhum registro encontrado");
 		} else {
 			estadoDAO.excluir(estado);
-			System.out.println("Registro Removido:");
+			System.out.println("Registro removido:");
 			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
-			
+		}
+	}
 
+	@Test
+	public void editar() {
+		Long codigo = 10L;
+		EstadoDAO estadoDAO = new EstadoDAO();
+		Estado estado = estadoDAO.buscar(codigo);
+
+		if (estado == null) {
+			System.out.println("Nenhum registro encontrado");
+		} else {
+			System.out.println("Registro editado - Antes:");
+			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
+
+			estado.setNome("Santa Catarina");
+			estado.setSigla("SC");
+			estadoDAO.editar(estado);
+
+			System.out.println("Registro editado - Depois:");
+			System.out.println(estado.getCodigo() + " - " + estado.getSigla() + " - " + estado.getNome());
 		}
 	}
 }
