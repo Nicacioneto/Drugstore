@@ -1,1 +1,1 @@
-# Drugstore
+# Drugstore Java Web Project
